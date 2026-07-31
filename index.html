@@ -1,64 +1,87 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>丸亀駅グルメ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>丸亀駅カフェガイド</title>
 
-<style>
-body{
-    font-family:sans-serif;
-    margin:0;
-    background:#f5f5f5;
-}
-
-header{
-    background:#0066cc;
-    color:white;
-    padding:20px;
-    text-align:center;
-}
-
-.search{
-    padding:20px;
-}
-
-input{
-    width:100%;
-    padding:12px;
-    font-size:16px;
-    box-sizing:border-box;
-}
-
-.shop{
-    background:white;
-    margin:10px;
-    padding:15px;
-    border-radius:10px;
-}
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-<h1>丸亀駅グルメ</h1>
-<p>丸亀駅周辺の飲食店検索サイト</p>
+<header class="hero">
+    <h1>☕ 丸亀駅カフェガイド</h1>
+    <p>丸亀駅周辺のおしゃれなカフェをご紹介</p>
 </header>
 
-<div class="search">
-<input type="text" placeholder="店名を検索">
-</div>
+<section class="search-area">
 
-<div class="shop">
-<h3>サンプルうどん店</h3>
-<p>丸亀駅から徒歩5分</p>
-</div>
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="店名で検索">
 
-<div class="shop">
-<h3>サンプルカフェ</h3>
-<p>丸亀駅から徒歩3分</p>
-</div>
+    <h2>タグから探す</h2>
+
+    <div class="tag-area">
+
+        <button class="tag">コーヒー</button>
+        <button class="tag">パンケーキ</button>
+        <button class="tag">ケーキ</button>
+        <button class="tag">パフェ</button>
+        <button class="tag">ランチ</button>
+        <button class="tag">モーニング</button>
+
+        <button class="tag">PayPay</button>
+        <button class="tag">クレジットカード</button>
+        <button class="tag">電子マネー</button>
+
+        <button class="tag">Wi-Fi</button>
+        <button class="tag">駐車場</button>
+        <button class="tag">テイクアウト</button>
+        <button class="tag">テラス席</button>
+
+    </div>
+
+</section>
+
+<main>
+
+<section id="cafeList" class="cafe-grid">
+
+<!-- カフェカードをscript.jsで表示 -->
+
+</section>
+
+</main>
+
+<footer>
+
+<section class="survey">
+
+<h2>📋 アンケート</h2>
+
+<p>
+サイトの利便性向上のため、
+アンケートへのご協力をお願いいたします。
+</p>
+
+<a href="#" class="survey-button">
+アンケートに回答する
+</a>
+
+</section>
+
+<hr>
+
+<p class="copyright">
+© 2026 Marugame Cafe Guide
+</p>
+
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
