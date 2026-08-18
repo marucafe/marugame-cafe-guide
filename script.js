@@ -249,5 +249,8 @@ tagButtons.forEach(button => {
 // ==============================
 // 最初に全店舗を表示
 // ==============================
+cafes.sort((a, b) =>
+    parseInt(a.walk.match(/\d+/)[0]) - parseInt(b.walk.match(/\d+/)[0])
+);
 
 displayCafes(cafes);
