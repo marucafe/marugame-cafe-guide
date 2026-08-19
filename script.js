@@ -2,7 +2,7 @@ const cafes = [
     {
         id: 1,
         name: "Cafe&Bar TRINITY",
-        image: "trinity(1).jpg",
+        image: "trinity.jpg",
         walk: "丸亀駅から徒歩2分",
         tags: ["PayPay", "Wi-Fi"]
     },
