@@ -10,7 +10,7 @@ const cafes = [
     {
         id: 2,
         name: "yaso（夜想）",
-        image: "yaso.jpg",
+        image: "yaso(1).jpg",
         walk: "丸亀駅から徒歩2分",
         tags: []
     },
@@ -18,7 +18,7 @@ const cafes = [
     {
         id: 3,
         name: "みどりや喫茶店",
-        image: "midoriya.jpg",
+        image: "midoriya(1).jpg",
         walk: "丸亀駅から徒歩3分",
         tags: ["駐車場", "モーニング", "テイクアウト"]
     },
@@ -26,7 +26,7 @@ const cafes = [
     {
         id: 4,
         name: "TANGIERS CAFE",
-        image: "tangiers.jpg",
+        image: "tangiers(1).jpg",
         walk: "丸亀駅から徒歩5分",
         tags: ["駐車場", "テイクアウト", "PayPay"]
     },
@@ -34,7 +34,7 @@ const cafes = [
     {
         id: 5,
         name: "Em Coffee",
-        image: "emcoffee.jpg",
+        image: "emcoffee(1).jpg",
         walk: "丸亀駅から徒歩6分",
         tags: ["駐車場", "テイクアウト", "PayPay"]
     },
@@ -42,7 +42,7 @@ const cafes = [
     {
         id: 6,
         name: "遊心夢楽",
-        image: "yushinmuraku.jpg",
+        image: "yushinmuraku(1).jpg",
         walk: "丸亀駅から徒歩8分",
         tags: ["ランチ", "PayPay", "Wi-Fi"]
     },
@@ -50,7 +50,7 @@ const cafes = [
     {
         id: 7,
         name: "Food&Bar アフタヌーンブレーク307",
-        image: "afternoonbreak307.jpg",
+        image: "afternoonbreak307(1).jpg",
         walk: "丸亀駅から徒歩3分",
         tags: []
     },
@@ -58,7 +58,7 @@ const cafes = [
     {
         id: 8,
         name: "ボヌール",
-        image: "bonheur.jpg",
+        image: "bonheur(1).jpg",
         walk: "丸亀駅から徒歩18分",
         tags: ["モーニング", "テイクアウト", "PayPay"]
     },
@@ -66,7 +66,7 @@ const cafes = [
     {
         id: 9,
         name: "キッチンかぷりす",
-        image: "caprice.jpg",
+        image: "caprice(1).jpg",
         walk: "丸亀駅から徒歩19分",
         tags: ["モーニング", "ランチ", "駐車場"]
     },
@@ -74,7 +74,7 @@ const cafes = [
     {
         id: 10,
         name: "ヨーロピアン珈琲 長崎屋",
-        image: "nagasakiya.jpg",
+        image: "nagasakiya(1).jpg",
         walk: "丸亀駅から徒歩27分",
         tags: ["駐車場", "PayPay", "Wi-Fi"]
     },
@@ -82,7 +82,7 @@ const cafes = [
     {
         id: 11,
         name: "macocco's life Cafe & Space",
-        image: "macoccos.jpg",
+        image: "macoccos(1).jpg",
         walk: "丸亀駅から徒歩30分",
         tags: ["ランチ", "デザート", "駐車場", "テイクアウト", "PayPay"]
     },
@@ -90,7 +90,7 @@ const cafes = [
     {
         id: 12,
         name: "喫茶ぺい",
-        image: "kissa_pei.jpg",
+        image: "kissa_pei(1).jpg",
         walk: "丸亀駅から徒歩6分",
         tags: []
     },
@@ -98,7 +98,7 @@ const cafes = [
     {
         id: 13,
         name: "みきcafe",
-        image: "mikicafe.jpg",
+        image: "mikicafe(1).jpg",
         walk: "丸亀駅から徒歩4分",
         tags: ["モーニング", "駐車場", "PayPay"]
     },
@@ -106,7 +106,7 @@ const cafes = [
     {
         id: 14,
         name: "カフェ・ラ・トープ",
-        image: "cafe_la_taupe.jpg",
+        image: "cafe_la_taupe(1).jpg",
         walk: "丸亀駅から徒歩6分",
         tags: ["テイクアウト"]
     },
@@ -114,7 +114,7 @@ const cafes = [
     {
         id: 15,
         name: "ミチカケ製菓店",
-        image: "michikake.jpg",
+        image: "michikake(1).jpg",
         walk: "丸亀駅から徒歩3分",
         tags: ["デザート"]
     },
@@ -122,7 +122,7 @@ const cafes = [
     {
         id: 16,
         name: "富屋珈琲店",
-        image: "tomiya.jpg",
+        image: "tomiya(1).jpg",
         walk: "丸亀駅から徒歩6分",
         tags: ["モーニング", "夜カフェ", "駐車場", "PayPay"]
     }
