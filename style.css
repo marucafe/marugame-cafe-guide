@@ -145,3 +145,17 @@ footer{
 }
 
 }
+/* 詳細ページのメイン写真 */
+.detail-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+/* スマホ */
+@media (max-width: 600px) {
+    .detail-image {
+        height: 260px;
+    }
+}
