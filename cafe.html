@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>店舗詳細 | 丸亀駅カフェガイド</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="hero">
+    <h1>☕ 丸亀駅カフェガイド</h1>
+    <p>店舗詳細</p>
+</header>
+
+<main>
+
+<section id="cafeDetail" class="cafe-detail">
+
+    <!-- 店舗情報をJavaScriptで表示 -->
+
+</section>
+
+<div class="back-area">
+
+    <a href="index.html" class="back-button">
+        ← カフェ一覧に戻る
+    </a>
+
+</div>
+
+</main>
+
+<script>
+
+const cafes = {
+
+    1: {
+        name: "Cafe&Bar TRINITY",
+        image: "trinity(1).jpg",
+        walk: "丸亀駅から徒歩2分",
+        address: "香川県丸亀市",
+        hours: "店舗情報をご確認ください",
+        holiday: "月曜日",
+        recommended: "ジャークチキン",
+        feature: "カフェ・バーとして利用できるお店です。",
+        comment: "ゆっくり過ごせる空間です。",
+        payment: "PayPay",
+        parking: "なし",
+        takeout: "情報なし"
+    },
+
+    2: {
+        name: "yaso（夜想）",
+        image: "yaso.jpg",
+        walk: "丸亀駅から徒歩2分",
+        address: "丸亀市浜町33-1",
+        hours: "15:00〜21:00",
+        holiday: "不定休（Instagramをご確認ください）",
+        recommended: "グリーンカレー",
+        feature: "飲み屋・雑貨屋・レコード屋",
+        comment: "ぜひお越しください。",
+        payment: "情報なし",
+        parking: "情報なし",
+        takeout: "情報なし"
+    },
+
+    3: {
+        name: "みどりや喫茶店",
+        image: "midoriya.jpg",
+        walk: "丸亀駅から徒歩3分",
+        address: "香川県丸亀市浜町7",
+        hours: "9:00〜18:00（水曜日のみ9:00〜12:30）",
+        holiday: "日曜日",
+        recommended: "たまごサンド、フルーツパフェ、コーヒー",
+        feature: "注文をいただいてから作る、できたての料理を提供しています。鮮度の良いものや体によいものを使用しています。",
+        comment: "ペット同伴のお客様や、保護犬・保護猫などに興味のあるお客様の集いの場にもなったら良いと思います。",
+        payment: "現金のみ",
+        parking: "3台",
+        takeout: "あり"
+    },
+
+    4: {
+        name: "TANGIERS CAFE",
+        image: "tangiers.jpg",
+        walk: "丸亀駅から徒歩5分",
+        address: "香川県丸亀市南条町1-1",
+        hours: "10:00〜18:00",
+        holiday: "月曜日・火曜日",
+        recommended: "自家製レモネード、レモネードバスクチーズケーキ",
+        feature: "香川県産レモンや豊島産ブラックベリーなど、地産地消をテーマとしたメニューがあります。",
+        comment: "香川県産レモンを使用したレモネードやバスクチーズケーキを楽しんでください。",
+        payment: "PayPay",
+        parking: "2台",
+        takeout: "あり"
+    },
+
+    5: {
+        name: "Em Coffee",
+        image: "emcoffee.jpg",
+        walk: "丸亀駅から徒歩6分",
+        address: "丸亀市葭町77-1",
+        hours: "金・土・日 9:00〜14:30 / 月 17:00〜20:30",
+        holiday: "火曜日・水曜日・木曜日",
+        recommended: "ドリップコーヒー、フラットホワイト",
+        feature: "浅煎りのコーヒーなど、コーヒーが苦手な人でもチャレンジしやすいコーヒーがあります。",
+        comment: "オーストラリアで修行をつんだバリスタが待っています。ぜひ遊びにきてください。",
+        payment: "現金、PayPay",
+        parking: "2台・近くに有料パーキングあり",
+        takeout: "あり"
+    },
+
+    6: {
+        name: "遊心夢楽",
+        image: "yushinmuraku.jpg",
+        walk: "丸亀駅から徒歩8分",
+        address: "香川県丸亀市通町53-1",
+        hours: "11:30〜13:30（変更あり）",
+        holiday: "土曜日・日曜日・祝日",
+        recommended: "日替わりランチ、スパイシーチキンカレー、唐揚げランチ",
+        feature: "おふくろの味",
+        comment: "忙しい毎日のお昼のひとときをくつろいで過ごせるよう頑張っています。",
+        payment: "PayPay",
+        parking: "情報なし",
+        takeout: "情報なし"
+    },
+
+    7: {
+        name: "Food&Bar アフタヌーンブレーク307",
+        image: "afternoonbreak307.jpg",
+        walk: "丸亀駅から徒歩3分",
+        address: "香川県丸亀市本町9-3 本町京都ビル102",
+        hours: "15:00〜21:00",
+        holiday: "情報なし",
+        recommended: "熟成スペアリブ、ひやしおでん（夏）",
+        feature: "フードメニューや水出しコーヒーなどがあります。",
+        comment: "まったりくつろげる空間です。",
+        payment: "情報なし",
+        parking: "情報なし",
+        takeout: "情報なし"
+    },
+
+    8: {
+        name: "ボヌール",
+        image: "bonheur.jpg",
+        walk: "丸亀駅から徒歩18分",
+        address: "香川県丸亀市蓬莱町58",
+        hours: "8:00〜16:00",
+        holiday: "木曜日",
+        recommended: "ナポリタン、オムライス、焼肉ピラフ、鍋焼きうどん（冬限定）",
+        feature: "昔ながらの喫茶店。近所の人々の交流の場となっています。",
+        comment: "店にある漫画を読みながらゆっくりお過ごしください。",
+        payment: "PayPay",
+        parking: "専用駐車場なし。近くの駐車場を利用できます。",
+        takeout: "あり"
+    },
+
+    9: {
+        name: "キッチンかぷりす",
+        image: "caprice.jpg",
+        walk: "丸亀駅から徒歩19分",
+        address: "香川県丸亀市土居町2丁目6-5",
+        hours: "9:00〜17:00（16:00ラストオーダー）",
+        holiday: "水曜日",
+        recommended: "季節ごとに変わるメニュー",
+        feature: "フレンチ出身のシェフならではの新しい味わい。フレンチカントリー風の店内。",
+        comment: "日々のご褒美に是非いらしてください。",
+        payment: "情報なし",
+        parking: "4台分（乗り合わせがおすすめ）",
+        takeout: "情報なし"
+    },
+
+    10: {
+        name: "ヨーロピアン珈琲 長崎屋",
+        image: "nagasakiya.jpg",
+        walk: "丸亀駅から徒歩27分",
+        address: "香川県丸亀市土居町1丁目8-5",
+        hours: "8:00〜17:00",
+        holiday: "木曜日",
+        recommended: "焼きカレー",
+        feature: "1980年創業。昭和レトロでアンティーク調の店内。",
+        comment: "是非お越しいただき、店の雰囲気を味わってみてください。",
+        payment: "PayPay",
+        parking: "あり",
+        takeout: "情報なし"
+    },
+
+    11: {
+        name: "macocco's life Cafe & Space",
+        image: "macoccos.jpg",
+        walk: "丸亀駅から徒歩30分",
+        address: "香川県丸亀市土器町西5丁目191",
+        hours: "10:00〜16:00（ラストオーダー15:30）",
+        holiday: "火曜日・水曜日（臨時休業はInstagramをご確認ください）",
+        recommended: "アイスコーヒー、自家製バスクチーズケーキ",
+        feature: "炭火から作る、冷めても美味しいコーヒー。お客さんがくつろげる空間。",
+        comment: "待合室もご用意しております。是非ごゆっくりおくつろぎください。",
+        payment: "PayPay",
+        parking: "13台",
+        takeout: "ドリンクのみ"
+    },
+
+    12: {
+        name: "喫茶ぺい",
+        image: "kissa_pei.jpg",
+        walk: "丸亀駅から徒歩6分",
+        address: "香川県丸亀市南条町11-4 川松ビル1F",
+        hours: "平日 11:30〜14:30、17:30〜21:30 / 土日祝 11:30〜20:00",
+        holiday: "水曜日・木曜日",
+        recommended: "ナポリタン、ホットケーキ",
+        feature: "昔ながらのかわいいから流行りのかわいいまで、たくさんの「かわいい」を詰め込んだ喫茶店。",
+        comment: "丸亀に来る機会があれば寄ってもらえるとうれしいです。",
+        payment: "情報なし",
+        parking: "なし",
+        takeout: "情報なし"
+    },
+
+    13: {
+        name: "みきcafe",
+        image: "mikicafe.jpg",
+        walk: "丸亀駅から徒歩4分",
+        address: "香川県丸亀市塩飽町19-5",
+        hours: "火〜土 7:00〜17:00 / 日・祝 8:00〜17:00",
+        holiday: "月曜日",
+        recommended: "ナポリタン、納豆チャーハンセット",
+        feature: "人との繋がりや、お客様同士の会話などを大切にしています。",
+        comment: "いろんな人に、どこにいても思い出してもらえるような店にしたいです。",
+        payment: "PayPay",
+        parking: "3台",
+        takeout: "情報なし"
+    },
+
+    14: {
+        name: "カフェ・ラ・トープ",
+        image: "cafe_la_taupe.jpg",
+        walk: "丸亀駅から徒歩6分",
+        address: "香川県丸亀市通町28-3",
+        hours: "11:30〜17:00、18:00〜20:00",
+        holiday: "月曜日・火曜日",
+        recommended: "チキンカツにタルタルソース定食、フレンチトースト",
+        feature: "アンティークの家具に囲まれた空間でゆったり過ごせます。",
+        comment: "看板もなく分かりにくいですが、探して是非来てください。",
+        payment: "情報なし",
+        parking: "京極パーキングの駐車券補助あり",
+        takeout: "あり"
+    },
+
+    15: {
+        name: "ミチカケ製菓店",
+        image: "michikake.jpg",
+        walk: "丸亀駅から徒歩3分",
+        address: "丸亀市浜町3-11",
+        hours: "木・金・日 13:00〜19:00 / 土 13:00〜21:00",
+        holiday: "月曜日・火曜日・水曜日",
+        recommended: "桃とアールグレイのアイス、ミルクアイスとスモモのガストリックソース、マクワウソのソルベ",
+        feature: "クラフトアイスが楽しめます。",
+        comment: "コーヒーとアイスの食べ合わせを楽しんでみませんか。",
+        payment: "情報なし",
+        parking: "なし",
+        takeout: "情報なし"
+    },
+
+    16: {
+        name: "富屋珈琲店",
+        image: "tomiya.jpg",
+        walk: "丸亀駅から徒歩6分",
+        address: "香川県丸亀市富屋町7-1",
+        hours: "平日 モーニング7:00〜14:00 / 夜カフェ17:30〜21:00、土日祝8:00〜17:00",
+        holiday: "月曜日",
+        recommended: "グラタン、ホットサンド、水出し珈琲",
+        feature: "大正ロマンの雰囲気でジャズが聴けるお店。",
+        comment: "ゆっくり落ち着いて飲めるお店です。",
+        payment: "PayPay",
+        parking: "2台",
+        takeout: "情報なし"
+    }
+
+};
+
+
+const params = new URLSearchParams(window.location.search);
+
+const id = params.get("id");
+
+const cafe = cafes[id];
+
+const detail = document.getElementById("cafeDetail");
+
+
+if (!cafe) {
+
+    detail.innerHTML = `
+        <h2>店舗が見つかりません</h2>
+        <p>一覧ページから店舗を選び直してください。</p>
+    `;
+
+} else {
+
+    detail.innerHTML = `
+
+        <img
+            src="${cafe.image}"
+            alt="${cafe.name}"
+            class="detail-image"
+        >
+
+        <h2>${cafe.name}</h2>
+
+        <p class="detail-walk">
+            🚶 ${cafe.walk}
+        </p>
+
+        <div class="detail-info">
+
+            <div class="info-box">
+                <h3>📍 住所</h3>
+                <p>${cafe.address}</p>
+            </div>
+
+            <div class="info-box">
+                <h3>🕐 営業時間</h3>
+                <p>${cafe.hours}</p>
+            </div>
+
+            <div class="info-box">
+                <h3>📅 定休日</h3>
+                <p>${cafe.holiday}</p>
+            </div>
+
+            <div class="info-box">
+                <h3>☕ おすすめメニュー</h3>
+                <p>${cafe.recommended}</p>
+            </div>
+
+            <div class="info-box">
+                <h3>✨ 特徴・こだわり</h3>
+                <p>${cafe.feature}</p>
+            </div>
+
+            <div class="info-box">
+                <h3>💬 お店からのコメント</h3>
+                <p>${cafe.comment}</p>
+            </div>
+
+            <div class="info-box">
+                <h3>💳 支払い方法</h3>
+                <p>${cafe.payment}</p>
+            </div>
+
+            <div class="info-box">
+                <h3>🚗 駐車場</h3>
+                <p>${cafe.parking}</p>
+            </div>
+
+            <div class="info-box">
+                <h3>🛍 テイクアウト</h3>
+                <p>${cafe.takeout}</p>
+            </div>
+
+        </div>
+    `;
+}
+
+</script>
+
+</body>
+</html>
