@@ -42,7 +42,7 @@ const cafes = [
     {
         id: 6,
         name: "遊心夢楽",
-        image: "yushin(1).jpg",
+        image: "yusin(1).jpg",
         walk: "丸亀駅から徒歩8分",
         tags: ["ランチ", "PayPay", "Wi-Fi"]
     },
