@@ -82,7 +82,7 @@ const cafes = [
     {
         id: 11,
         name: "macocco's life Cafe & Space",
-        image: "macoccos(1).jpg",
+        image: "macocos(1).jpg",
         walk: "丸亀駅から徒歩30分",
         tags: ["ランチ", "デザート", "駐車場", "テイクアウト", "PayPay"]
     },
