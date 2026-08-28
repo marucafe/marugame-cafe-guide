@@ -8,6 +8,44 @@
     <title>店舗詳細 | 丸亀駅カフェガイド</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* 写真ギャラリー */
+        .photo-gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 10px 0 20px;
+            margin-bottom: 25px;
+            scroll-snap-type: x mandatory;
+        }
+
+        .photo-gallery img {
+            flex: 0 0 auto;
+            width: 85vw;
+            max-width: 500px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+            scroll-snap-align: start;
+        }
+
+        /* パソコン */
+        @media (min-width: 768px) {
+            .photo-gallery img {
+                width: 500px;
+                height: 350px;
+            }
+        }
+
+        .instagram-link,
+        .website-link {
+            display: inline-block;
+            margin-top: 8px;
+            word-break: break-all;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -35,19 +73,22 @@
 
 </main>
 
+
 <script>
 
-const cafes = [
+const cafes = {
 
     1: {
         name: "Cafe&Bar TRINITY",
+
         images: [
             "trinity(1).jpg",
             "trinity(2).jpg",
             "trinity(3).jpg",
             "trinity(5).jpg",
             "trinity(6).jpg"
-            ],
+        ],
+
         walk: "丸亀駅から徒歩2分",
         address: "香川県丸亀市浜松町25　秋山店舗ビル2F南側",
         hours: "店舗情報をご確認ください",
@@ -60,12 +101,16 @@ const cafes = [
         takeout: "情報なし"
     },
 
+
     2: {
         name: "yaso（夜想）",
-        images: ["yaso(2).jpg",
-                "yaso(3).jpg",
-                "yaso(5).jpg"
-                ]
+
+        images: [
+            "yaso(2).jpg",
+            "yaso(3).jpg",
+            "yaso(5).jpg"
+        ],
+
         walk: "丸亀駅から徒歩2分",
         address: "丸亀市浜町33-1",
         hours: "15:00〜21:00",
@@ -78,12 +123,16 @@ const cafes = [
         takeout: "情報なし"
     },
 
+
     3: {
         name: "みどりや喫茶店",
-        images: ["midoriya(2).jpg",
-                "midoriya(3).jpg",
-                "midoriya(4).jpg",
-                ]
+
+        images: [
+            "midoriya(2).jpg",
+            "midoriya(3).jpg",
+            "midoriya(4).jpg"
+        ],
+
         walk: "丸亀駅から徒歩3分",
         address: "香川県丸亀市浜町7",
         hours: "9:00〜18:00（水曜日のみ9:00〜12:30）",
@@ -93,15 +142,20 @@ const cafes = [
         comment: "ペット同伴のお客様や、保護犬・保護猫などに興味のあるお客様の集いの場にもなったら良いと思います。",
         payment: "現金のみ",
         parking: "3台",
-        takeout: "あり"
+        takeout: "あり",
+        morning: "終日モーニング営業"
     },
+
 
     4: {
         name: "TANGIERS CAFE",
-        images: ["tangiers(2).jpg",
-                "tangiers(3).jpg",
-                "tangiers(4).jpg"
-                ]
+
+        images: [
+            "tangiers(2).jpg",
+            "tangiers(3).jpg",
+            "tangiers(4).jpg"
+        ],
+
         walk: "丸亀駅から徒歩5分",
         address: "香川県丸亀市南条町1-1",
         hours: "10:00〜18:00",
@@ -111,13 +165,19 @@ const cafes = [
         comment: "香川県産レモンを使用したレモネードやバスクチーズケーキを楽しんでください。",
         payment: "PayPay",
         parking: "2台",
-        takeout: "あり"
+        takeout: "あり",
+        instagram: "https://www.instagram.com/tangierscafe"
     },
+
 
     5: {
         name: "Em Coffee",
-        images: ["Em(2).jpg",
-                "Em(3).jpg"]
+
+        images: [
+            "Em(2).jpg",
+            "Em(3).jpg"
+        ],
+
         walk: "丸亀駅から徒歩6分",
         address: "丸亀市葭町77-1",
         hours: "金・土・日 9:00〜14:30 / 月 17:00〜20:30",
@@ -127,14 +187,19 @@ const cafes = [
         comment: "オーストラリアで修行をつんだバリスタが待っています。ぜひ遊びにきてください。",
         payment: "現金、PayPay",
         parking: "2台・近くに有料パーキングあり",
-        takeout: "あり"
+        takeout: "あり",
+        instagram: "https://www.instagram.com/emcoffee_kagawa"
     },
+
 
     6: {
         name: "遊心夢楽",
-        images: ["yusin(2).jpg",
-                "yusin(3).jpg"
-                ]
+
+        images: [
+            "yusin(2).jpg",
+            "yusin(3).jpg"
+        ],
+
         walk: "丸亀駅から徒歩8分",
         address: "香川県丸亀市通町53-1",
         hours: "11:30〜13:30（変更あり）",
@@ -144,16 +209,22 @@ const cafes = [
         comment: "忙しい毎日のお昼のひとときをくつろいで過ごせるよう頑張っています。",
         payment: "PayPay",
         parking: "情報なし",
-        takeout: "情報なし"
+        takeout: "情報なし",
+        wifi: "あり",
+        website: "https://cafeyu.xyz/"
     },
+
 
     7: {
         name: "Food&Bar アフタヌーンブレーク307",
-        images: ["307(2).jpg",
-                "307(3).jpg",
-                "307(4).jpg",
-                "307(5).jpg"
-                ]
+
+        images: [
+            "307(2).jpg",
+            "307(3).jpg",
+            "307(4).jpg",
+            "307(5).jpg"
+        ],
+
         walk: "丸亀駅から徒歩3分",
         address: "香川県丸亀市本町9-3 本町京都ビル102",
         hours: "15:00〜21:00",
@@ -163,15 +234,20 @@ const cafes = [
         comment: "まったりくつろげる空間です。",
         payment: "情報なし",
         parking: "情報なし",
-        takeout: "情報なし"
+        takeout: "情報なし",
+        instagram: "https://www.instagram.com/afternoonbreak307"
     },
+
 
     8: {
         name: "ボヌール",
-        images: [bonheur(2).jpg,
-                bonheur(3).jpg,
-                bonheur(4).jpg
-                ]
+
+        images: [
+            "bonheur(2).jpg",
+            "bonheur(3).jpg",
+            "bonheur(4).jpg"
+        ],
+
         walk: "丸亀駅から徒歩18分",
         address: "香川県丸亀市蓬莱町58",
         hours: "8:00〜16:00",
@@ -181,15 +257,20 @@ const cafes = [
         comment: "店にある漫画を読みながらゆっくりお過ごしください。",
         payment: "PayPay",
         parking: "専用駐車場なし。近くの駐車場を利用できます。",
-        takeout: "あり"
+        takeout: "あり",
+        morning: "8:00〜10:30"
     },
+
 
     9: {
         name: "キッチンかぷりす",
-        images: ["caprice(2).jpg",
-                "caprice(3).jpg",
-                "caprice(4).jpg"
-                ]
+
+        images: [
+            "caprice(2).jpg",
+            "caprice(3).jpg",
+            "caprice(4).jpg"
+        ],
+
         walk: "丸亀駅から徒歩19分",
         address: "香川県丸亀市土居町2丁目6-5",
         hours: "9:00〜17:00（16:00ラストオーダー）",
@@ -199,15 +280,23 @@ const cafes = [
         comment: "日々のご褒美に是非いらしてください。",
         payment: "情報なし",
         parking: "4台分（乗り合わせがおすすめ）",
-        takeout: "情報なし"
+        takeout: "情報なし",
+        morning: "9:00〜16:00",
+        lunch: "11:00〜16:00",
+        dessert: "13:30〜16:00",
+        instagram: "https://www.instagram.com/maru_caprice"
     },
+
 
     10: {
         name: "ヨーロピアン珈琲 長崎屋",
-        images: ["nagasakiya(2).jpg",
-                "nagasakiya(3).jpg",
-                "nagasakiya(4).jpg"
-                ]
+
+        images: [
+            "nagasakiya(2).jpg",
+            "nagasakiya(3).jpg",
+            "nagasakiya(4).jpg"
+        ],
+
         walk: "丸亀駅から徒歩27分",
         address: "香川県丸亀市土居町1丁目8-5",
         hours: "8:00〜17:00",
@@ -217,12 +306,18 @@ const cafes = [
         comment: "是非お越しいただき、店の雰囲気を味わってみてください。",
         payment: "PayPay",
         parking: "あり",
-        takeout: "情報なし"
+        takeout: "情報なし",
+        wifi: "あり"
     },
+
 
     11: {
         name: "macocco's life Cafe & Space",
-        image: "macoccos.jpg",
+
+        images: [
+            "macoccos.jpg"
+        ],
+
         walk: "丸亀駅から徒歩30分",
         address: "香川県丸亀市土器町西5丁目191",
         hours: "10:00〜16:00（ラストオーダー15:30）",
@@ -232,12 +327,20 @@ const cafes = [
         comment: "待合室もご用意しております。是非ごゆっくりおくつろぎください。",
         payment: "PayPay",
         parking: "13台",
-        takeout: "ドリンクのみ"
+        takeout: "ドリンクのみ",
+        lunch: "10:30〜14:00（日替わり）",
+        dessert: "14:00〜15:30",
+        instagram: "https://www.instagram.com/macocco.z"
     },
+
 
     12: {
         name: "喫茶ぺい",
-        image: "kissa_pei.jpg",
+
+        images: [
+            "kissa_pei.jpg"
+        ],
+
         walk: "丸亀駅から徒歩6分",
         address: "香川県丸亀市南条町11-4 川松ビル1F",
         hours: "平日 11:30〜14:30、17:30〜21:30 / 土日祝 11:30〜20:00",
@@ -247,12 +350,18 @@ const cafes = [
         comment: "丸亀に来る機会があれば寄ってもらえるとうれしいです。",
         payment: "情報なし",
         parking: "なし",
-        takeout: "情報なし"
+        takeout: "情報なし",
+        instagram: "https://www.instagram.com/kissa_pei"
     },
+
 
     13: {
         name: "みきcafe",
-        image: "mikicafe.jpg",
+
+        images: [
+            "mikicafe.jpg"
+        ],
+
         walk: "丸亀駅から徒歩4分",
         address: "香川県丸亀市塩飽町19-5",
         hours: "火〜土 7:00〜17:00 / 日・祝 8:00〜17:00",
@@ -262,12 +371,18 @@ const cafes = [
         comment: "いろんな人に、どこにいても思い出してもらえるような店にしたいです。",
         payment: "PayPay",
         parking: "3台",
-        takeout: "情報なし"
+        takeout: "情報なし",
+        morning: "7:00〜11:00"
     },
+
 
     14: {
         name: "カフェ・ラ・トープ",
-        image: "cafe_la_taupe.jpg",
+
+        images: [
+            "cafe_la_taupe.jpg"
+        ],
+
         walk: "丸亀駅から徒歩6分",
         address: "香川県丸亀市通町28-3",
         hours: "11:30〜17:00、18:00〜20:00",
@@ -277,12 +392,18 @@ const cafes = [
         comment: "看板もなく分かりにくいですが、探して是非来てください。",
         payment: "情報なし",
         parking: "京極パーキングの駐車券補助あり",
-        takeout: "あり"
+        takeout: "あり",
+        instagram: "https://www.instagram.com/cafe_la_taupe"
     },
+
 
     15: {
         name: "ミチカケ製菓店",
-        image: "michikake.jpg",
+
+        images: [
+            "michikake.jpg"
+        ],
+
         walk: "丸亀駅から徒歩3分",
         address: "丸亀市浜町3-11",
         hours: "木・金・日 13:00〜19:00 / 土 13:00〜21:00",
@@ -292,18 +413,24 @@ const cafes = [
         comment: "コーヒーとアイスの食べ合わせを楽しんでみませんか。",
         payment: "情報なし",
         parking: "なし",
-        takeout: "情報なし"
+        takeout: "情報なし",
+        instagram: "https://www.instagram.com/michikake_seikaten"
     },
+
 
     16: {
         name: "富屋珈琲店",
-        image: "tomiya.jpg",
+
+        images: [
+            "tomiya.jpg"
+        ],
+
         walk: "丸亀駅から徒歩6分",
         address: "香川県丸亀市富屋町7-1",
         hours: "平日 モーニング7:00〜14:00 / 夜カフェ17:30〜21:00、土日祝8:00〜17:00",
         holiday: "月曜日",
-        recommended: "グラタン、ホットサンド、水出し珈琲",
-        feature: "大正ロマンの雰囲気でジャズが聴けるお店。",
+        recommended: "グラタン、ホットサンド、水出し珈琲（一滴一滴ゆっくりと時間をかけて抽出した自慢の水出し珈琲です）",
+        feature: "大正ロマンでジャズが聴けるお店。",
         comment: "ゆっくり落ち着いて飲めるお店です。",
         payment: "PayPay",
         parking: "2台",
@@ -331,19 +458,39 @@ if (!cafe) {
 
 } else {
 
+    /* 写真を作成 */
+
+    let photoHTML = "";
+
+    if (cafe.images && cafe.images.length > 0) {
+
+        photoHTML = `
+            <div class="photo-gallery">
+                ${cafe.images.map(image => `
+                    <img
+                        src="${image}"
+                        alt="${cafe.name}"
+                        onerror="this.style.display='none';"
+                    >
+                `).join("")}
+            </div>
+        `;
+
+    }
+
+
+    /* 店舗情報を作成 */
+
     detail.innerHTML = `
 
-        <img
-            src="${cafe.image}"
-            alt="${cafe.name}"
-            class="detail-image"
-        >
+        ${photoHTML}
 
         <h2>${cafe.name}</h2>
 
         <p class="detail-walk">
             🚶 ${cafe.walk}
         </p>
+
 
         <div class="detail-info">
 
@@ -352,49 +499,123 @@ if (!cafe) {
                 <p>${cafe.address}</p>
             </div>
 
+
             <div class="info-box">
                 <h3>🕐 営業時間</h3>
                 <p>${cafe.hours}</p>
             </div>
+
 
             <div class="info-box">
                 <h3>📅 定休日</h3>
                 <p>${cafe.holiday}</p>
             </div>
 
+
+            ${cafe.morning ? `
+            <div class="info-box">
+                <h3>🌅 モーニング</h3>
+                <p>${cafe.morning}</p>
+            </div>
+            ` : ""}
+
+
+            ${cafe.lunch ? `
+            <div class="info-box">
+                <h3>🍴 ランチ</h3>
+                <p>${cafe.lunch}</p>
+            </div>
+            ` : ""}
+
+
+            ${cafe.dessert ? `
+            <div class="info-box">
+                <h3>🍰 デザート</h3>
+                <p>${cafe.dessert}</p>
+            </div>
+            ` : ""}
+
+
             <div class="info-box">
                 <h3>☕ おすすめメニュー</h3>
                 <p>${cafe.recommended}</p>
             </div>
+
 
             <div class="info-box">
                 <h3>✨ 特徴・こだわり</h3>
                 <p>${cafe.feature}</p>
             </div>
 
+
             <div class="info-box">
                 <h3>💬 お店からのコメント</h3>
                 <p>${cafe.comment}</p>
             </div>
+
 
             <div class="info-box">
                 <h3>💳 支払い方法</h3>
                 <p>${cafe.payment}</p>
             </div>
 
+
             <div class="info-box">
                 <h3>🚗 駐車場</h3>
                 <p>${cafe.parking}</p>
             </div>
+
 
             <div class="info-box">
                 <h3>🛍 テイクアウト</h3>
                 <p>${cafe.takeout}</p>
             </div>
 
+
+            ${cafe.wifi ? `
+            <div class="info-box">
+                <h3>📶 Wi-Fi</h3>
+                <p>${cafe.wifi}</p>
+            </div>
+            ` : ""}
+
+
+            ${cafe.instagram ? `
+            <div class="info-box">
+                <h3>📷 Instagram</h3>
+                <p>
+                    <a
+                        href="${cafe.instagram}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="instagram-link"
+                    >
+                        Instagramを見る
+                    </a>
+                </p>
+            </div>
+            ` : ""}
+
+
+            ${cafe.website ? `
+            <div class="info-box">
+                <h3>🌐 公式サイト</h3>
+                <p>
+                    <a
+                        href="${cafe.website}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="website-link"
+                    >
+                        公式サイトを見る
+                    </a>
+                </p>
+            </div>
+            ` : ""}
+
         </div>
     `;
-]
+}
 
 </script>
 
