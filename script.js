@@ -125,7 +125,25 @@ const cafes = [
         image: "tomiya(1).jpg",
         walk: "丸亀駅から徒歩6分",
         tags: ["モーニング", "夜カフェ", "駐車場", "PayPay"]
+    },
+    
+        {
+        id: 17,
+        name: "BABANO BAR Cafe & Bar & Coworking Space",
+        image: "BANANO(1).jpg",
+        walk: "丸亀駅から徒歩3分",
+        tags: ["テイクアウト", "Wi-Fi", "PayPay"]
+    },
+
+        {
+        id: 18,
+        name: "はじまり珈琲｜言の葉の席",
+        image: "言の葉(1).jpg",
+        walk: "丸亀駅から徒歩1分",
+        tags: ["テイクアウト", "PayPay"]
     }
+
+
 ];
 
 
