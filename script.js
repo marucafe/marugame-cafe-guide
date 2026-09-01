@@ -130,7 +130,7 @@ const cafes = [
         {
         id: 17,
         name: "BABANO BAR Cafe & Bar & Coworking Space",
-        image: "BANANO(1).jpg",
+        image: "BABANO(1).jpg",
         walk: "丸亀駅から徒歩3分",
         tags: ["テイクアウト", "Wi-Fi", "PayPay"]
     },
@@ -138,7 +138,7 @@ const cafes = [
         {
         id: 18,
         name: "はじまり珈琲｜言の葉の席",
-        image: "言の葉(1).jpg",
+        image: "kotonoha(1).jpg",
         walk: "丸亀駅から徒歩1分",
         tags: ["テイクアウト", "PayPay"]
     }
