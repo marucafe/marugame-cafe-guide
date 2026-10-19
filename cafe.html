@@ -9,7 +9,67 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <style>
+   /* 店舗情報を表形式にする */
+.detail-info {
+    display: block;
+    margin-top: 20px;
+    border: 1px solid #e2ddd5;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.info-box {
+    display: grid;
+    grid-template-columns: 125px minmax(0, 1fr);
+    gap: 12px;
+    padding: 15px;
+    margin: 0;
+    border-bottom: 1px solid #eee8df;
+    align-items: start;
+}
+
+.info-box:last-child {
+    border-bottom: none;
+}
+
+.info-box h3 {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #665443;
+}
+
+.info-box p {
+    margin: 0;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.detail-walk {
+    display: inline-block;
+    background: #f5efe6;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    .info-box {
+        grid-template-columns: 105px minmax(0, 1fr);
+        gap: 8px;
+        padding: 13px 10px;
+    }
+
+    .info-box h3 {
+        font-size: 13px;
+    }
+
+    .info-box p {
+        font-size: 14px;
+    }
+} 
+ <style>
         /* 写真ギャラリー */
         .photo-gallery {
             display: flex;
@@ -537,142 +597,51 @@ if (!cafe) {
     }
 
 
-    /* 店舗情報を作成 */
+/* 店舗情報を作成 */
 
-    detail.innerHTML = `
+const rows = [
+    ["📍 住所", cafe.address],
+    ["🕐 営業時間", cafe.hours],
+    ["📅 定休日", cafe.holiday],
+    ...(cafe.morning ? [["🌅 モーニング", cafe.morning]] : []),
+    ...(cafe.lunch ? [["🍴 ランチ", cafe.lunch]] : []),
+    ...(cafe.dessert ? [["🍰 デザート", cafe.dessert]] : []),
+    ["☕ おすすめメニュー", cafe.recommended],
+    ["✨ 特徴・こだわり", cafe.feature],
+    ["💬 お店からのコメント", cafe.comment],
+    ["💳 支払い方法", cafe.payment],
+    ["🚗 駐車場", cafe.parking],
+    ["🛍️ テイクアウト", cafe.takeout],
+    ...(cafe.wifi ? [["📶 Wi-Fi", cafe.wifi]] : []),
+    ...(cafe.instagram ? [["📷 Instagram",
+        `<a href="${cafe.instagram.startsWith("http") ? cafe.instagram : "https://" + cafe.instagram}"
+        target="_blank" rel="noopener noreferrer"
+        class="instagram-link">Instagramを見る ↗</a>`]] : []),
+    ...(cafe.website ? [["🌐 公式サイト",
+        `<a href="${cafe.website}" target="_blank"
+        rel="noopener noreferrer"
+        class="website-link">公式サイトを見る ↗</a>`]] : [])
+];
 
-        ${photoHTML}
+detail.innerHTML = `
+    ${photoHTML}
 
-        <h2>${cafe.name}</h2>
+    <h2>${cafe.name}</h2>
 
-        <p class="detail-walk">
-            🚶 ${cafe.walk}
-        </p>
+    <p class="detail-walk">🚶 ${cafe.walk}</p>
 
+    <h3 class="info-heading">店舗情報</h3>
 
-        <div class="detail-info">
-
+    <div class="detail-info">
+        ${rows.map(([label, value]) => `
             <div class="info-box">
-                <h3>📍 住所</h3>
-                <p>${cafe.address}</p>
+                <h3>${label}</h3>
+                <p>${value ?? "情報なし"}</p>
             </div>
+        `).join("")}
+    </div>
+`;
 
-
-            <div class="info-box">
-                <h3>🕐 営業時間</h3>
-                <p>${cafe.hours}</p>
-            </div>
-
-
-            <div class="info-box">
-                <h3>📅 定休日</h3>
-                <p>${cafe.holiday}</p>
-            </div>
-
-
-            ${cafe.morning ? `
-            <div class="info-box">
-                <h3>🌅 モーニング</h3>
-                <p>${cafe.morning}</p>
-            </div>
-            ` : ""}
-
-
-            ${cafe.lunch ? `
-            <div class="info-box">
-                <h3>🍴 ランチ</h3>
-                <p>${cafe.lunch}</p>
-            </div>
-            ` : ""}
-
-
-            ${cafe.dessert ? `
-            <div class="info-box">
-                <h3>🍰 デザート</h3>
-                <p>${cafe.dessert}</p>
-            </div>
-            ` : ""}
-
-
-            <div class="info-box">
-                <h3>☕ おすすめメニュー</h3>
-                <p>${cafe.recommended}</p>
-            </div>
-
-
-            <div class="info-box">
-                <h3>✨ 特徴・こだわり</h3>
-                <p>${cafe.feature}</p>
-            </div>
-
-
-            <div class="info-box">
-                <h3>💬 お店からのコメント</h3>
-                <p>${cafe.comment}</p>
-            </div>
-
-
-            <div class="info-box">
-                <h3>💳 支払い方法</h3>
-                <p>${cafe.payment}</p>
-            </div>
-
-
-            <div class="info-box">
-                <h3>🚗 駐車場</h3>
-                <p>${cafe.parking}</p>
-            </div>
-
-
-            <div class="info-box">
-                <h3>🛍 テイクアウト</h3>
-                <p>${cafe.takeout}</p>
-            </div>
-
-
-            ${cafe.wifi ? `
-            <div class="info-box">
-                <h3>📶 Wi-Fi</h3>
-                <p>${cafe.wifi}</p>
-            </div>
-            ` : ""}
-
-
-            ${cafe.instagram ? `
-            <div class="info-box">
-                <h3>📷 Instagram</h3>
-                <p>
-                    <a
-                        href="${cafe.instagram}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="instagram-link"
-                    >
-                        Instagramを見る
-                    </a>
-                </p>
-            </div>
-            ` : ""}
-
-
-            ${cafe.website ? `
-            <div class="info-box">
-                <h3>🌐 公式サイト</h3>
-                <p>
-                    <a
-                        href="${cafe.website}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="website-link"
-                    >
-                        公式サイトを見る
-                    </a>
-                </p>
-            </div>
-            ` : ""}
-
-        </div>
-    `;
 }
 
 </script>
